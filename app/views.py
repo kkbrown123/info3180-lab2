@@ -1,7 +1,11 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+import datetime
 
-
+def format_date_joined(day, month, year):
+    _date = datetime.date(year, month, day)
+    format_date = "Joined " + _date.strftime("%B, %Y")
+    return format_date
 ###
 # Routing for your application.
 ###
@@ -27,6 +31,11 @@ def send_text_file(file_name):
     """Send your static text file."""
     file_dot_text = file_name + '.txt'
     return app.send_static_file(file_dot_text)
+
+
+@app.route('/profile/')
+def profile():
+    return render_template('profile.html', date=format_date_joined(27, 8, 2015))
 
 
 @app.after_request

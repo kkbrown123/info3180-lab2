@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="profile">
+    <section class="profile-top">
+        <img src="{{ url_for('static', filename='images/profilepic.png') }}" alt="Profile Picture">
+        <h1>Kevonteh Brown</h1>
+        <p>@kev1_code.py</p>
+        <p>Lluidas Vale, Jamaica</p>
+        <p>{{ date }}</p>
+    </section>
+    <section class="profile-bottom">
+        <p>I am a talented and dedicated man who loves Robotics. I can use python, Java, ROS2 and I am currently learning C++! Reach out to me if you are interested in working together.</p>
+        <div class="stats-list">
+
+            <div class="stat">
+                <h2>7</h2>
+                <p>Posts</p>
+            </div>
+
+            <div class="stat">
+                <h2>100</h2>
+                <p>Following</p>
+            </div>
+
+            <div class="stat">
+                <h2>2500</h2>
+                <p>Followers</p>
+            </div>
+
+        </div>
+        <button>Follow</button>
+
+    </section>
+</div>
+{% endblock %}
